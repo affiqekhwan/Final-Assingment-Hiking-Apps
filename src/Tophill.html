@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Hill</title>
+    <link rel="stylesheet" href="Tophill.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body>
+    <header>
+		<div class="navbar container">
+			<div class="logo"><h1>Hiking Trail</h1></div>
+			<ul class="nav-list">
+				<li><a href="Homepage.html">Home</a></li>
+				<li><a href="CRUD.html">Notes</a></li>
+        <li><a href="api.html">Weather</a></li>
+        <li><a href="Safety.html">Safety Guide</a></li>
+
+				
+			</ul>
+			
+		</div>
+	</header>
+
+    <section class="sec-01">
+      <div class="container">
+        <h2 class="main-title">Top Hill To Hiking</h2>
+        <div class="content">
+          <div class="image">
+            <img src="https://www.intrepidtravel.com/adventures/wp-content/uploads/2019/05/Intrepid-Travel-borneo_mt-kinabalu_female-pax.jpg" alt="">
+          </div>
+          <div class="text-box">
+            <h3>Mt Kinabalu, Sabah</h3>
+            <p>Rising like a pointy fang from the jungles of northern Borneo, Mt Kinabalu is Malaysia’s highest peak, and it's a sacred site for the indigenous Kadazan-Dusun people of Sabah.
+                 The clouds that seem to perennially shroud its 4095m (13,435ft) summit – known since colonial times as Low's Peak</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-02">
+      <div class="container">
+        <h3 class="section-title">Broga Hill</h3>
+        <div class="content">
+          <div class="image">
+            <img src="http://cdn.shopify.com/s/files/1/0595/9001/7201/articles/RareTV_Broga_Hill.jpg?v=1644169681" alt="">
+          </div>
+          <div class="info">
+            <h4 class="info-title">Summary</h4>
+            <p>Broga Hill is located in the town of Semenyih, Selangor, Peninsular Malaysia. It is also known as Bukit Lalang or Bukit Broga. Standing at 400m tall,  it is a relatively simple hike which offers a panoramic view of the Broga town.
+                 As such, it can get really crowded during the weekends during the morning and evening hours</p>
+          </div>
+        </div>
+      </div>
+    </section>
+       <section class="sec-01">
+      <div class="container">
+        <div class="content">
+          <div class="image">
+            <img src="https://travelwithlens.com/wp-content/uploads/2019/08/Gasing-HIll-3s.jpeg" alt="">
+          </div>
+          <div class="text-box">
+            <h3>Gasing Hill</h3>
+            <p>Gasing Hill is the green lung between Kuala Lumpur and Petaling Jaya. It is a secondary forest stretching more than 100 hectares.
+                 Visitors may not be aware that this lush jungle was once an abandoned rubber plantation.It is also called hutan pendidikan Bukit Gasing or Bukit Gasing Forest Reserve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-02">
+        <div class="container">
+          <h3 class="section-title">Bukit Chenuang</h3>
+          <div class="content">
+            <div class="image">
+              <img src="https://1.bp.blogspot.com/-GUJX2lTssi4/WoolmBEYpZI/AAAAAAAAUdI/Rfi6z3_kHrcJTKVsJuTlU8kGLhV7ohvjACEwYBhgL/s1600/IMG_20180218_113713.jpg" alt="">
+            </div>
+            <div class="info">
+              <h4 class="info-title">Summary</h4>
+              <p>The Chenuang Peak Trail will take you to the top of Chenuang Hill, through the Sungai Congkak Recreational Forest Park. There are many streams on this trail. Be careful as some places on this route are quite steep and may be muddy and slippery in the rainy season. You will also be able to see a wide variety of flora and fauna on this trail. Please wear appropriate hiking boots,
+                 gloves (as there are many thorny plants there), salt (for leeches), insect repellant, and adequate drinking water.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <script>
+      //common reveal options to create reveal animations
+      ScrollReveal({
+        //reset: true,
+        distance: '60px',
+        duration: 2500,
+        delay: 400
+      });
+
+      //target elements, and specify options to create reveal animations
+      ScrollReveal().reveal('.main-title, .section-title', { delay: 500, origin: 'left' });
+      ScrollReveal().reveal('.sec-01 .image, .info', { delay: 600, origin: 'bottom' });
+      ScrollReveal().reveal('.text-box', { delay: 700, origin: 'right' });
+      ScrollReveal().reveal('.media-icons i', { delay: 500, origin: 'bottom', interval: 200 });
+      ScrollReveal().reveal('.sec-02 .image, .sec-03 .image', { delay: 500, origin: 'top' });
+      ScrollReveal().reveal('.media-info li', { delay: 500, origin: 'left', interval: 200 });
+    </script>
+
+  </body>
+</html>

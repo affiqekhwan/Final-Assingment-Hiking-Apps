@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking CRUD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CRUD.css">
+
+</head>
+<body>
+
+    <header>
+		<div class="navbar container">
+			<div class="logo"><h1>Hiking Trail</h1></div>
+			<ul class="nav-list">
+				<li><a href="Homepage.html">Home</a></li>
+				<li><a href="Tophill.html">Top Hill</a></li>
+        <li><a href="api.html">Weather</a></li>
+        <li><a href="Safety.html">Safety Guide</a></li>
+
+				
+			</ul>
+			
+		</div>
+	</header>
+
+  <h1 style="text-align: center;"><p class="note">Hiking Planner</p></h1>
+  <ul>
+    <li>
+      <a href="">
+        <div class="">Notes<p  id="files"></p></div>
+      </a>
+    </li>
+  </ul>
+<!-------form crud-->
+      <div class="mainWrapper">
+      
+  
+        <form>
+          
+          <div class="paper">
+            <div class="paper-content">
+              <p>Notes Names</p>
+                <textarea autofocus id="fileName" type="text">&#10;</textarea>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+          <div class="paper">
+            <div class="paper-content">
+              <p>Wishlist Hill</p>
+                <textarea autofocus id="fileContents" rows="5">&#10;</textarea>
+            </div>
+        </div>
+        </form>
+      <div class="butang">
+        <button id="btnCreate" class="btn"><h2>Create</h2></button>
+        <button id="btnRead" class="btn"><h2>Read</h2></button>
+        <button onclick="update()" class="btn"><h2>Update</h2></button>
+        <button id="btnDelete" class="btn"><h2>Delete</h2></button>
+      </div>
+      
+      </div>
+
+      <script src="main.js" ></script>
+
+      <script>
+        all_notes = $("li a");
+ 
+ all_notes.on("keyup", function () {
+   note_title = $(this).find("h2").text();
+   note_content = $(this).find("p").text();
+  
+   item_key = "list_" + $(this).parent().index();
+  
+   data = {
+     title: note_title,
+     content: note_content
+   };
+  
+   window.localStorage.setItem(item_key, JSON.stringify(data));
+ });
+      </script>
+      <script>all_notes.each(function (index) {
+        data = JSON.parse(window.localStorage.getItem("list_" + index));
+       
+        if (data !== null) {
+          note_title = data.title;
+          note_content = data.content;
+       
+          $(this).find("h2").text(note_title);
+          $(this).find("p").text(note_content);
+        }
+      });</script>
+      <script>$(document).ready(function () {
+        all_notes = $("li a");
+       
+        all_notes.on("keyup", function () {
+          note_title = $(this).find("h2").text();
+          note_content = $(this).find("p").text();
+       
+          item_key = "list_" + $(this).parent().index();
+       
+          data = {
+            title: note_title,
+            content: note_content
+          };
+       
+          window.localStorage.setItem(item_key, JSON.stringify(data));
+        });
+       
+        all_notes.each(function (index) {
+          data = JSON.parse(window.localStorage.getItem("list_" + index));
+       
+          if (data !== null) {
+            note_title = data.title;
+            note_content = data.content;
+       
+            $(this).find("h2").text(note_title);
+            $(this).find("p").text(note_content);
+          }
+        });
+      });</script>
+</body>
+</html>
